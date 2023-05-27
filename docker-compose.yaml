@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app
-      - /home/ccwtadmin/Music/temp:/app/output
+      - ~/Music/temp:/app/output
     working_dir: /app
     command: python3 main.py mp3
     user: 1000:1000
@@ -23,7 +23,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/app
-      - /home/ccwtadmin/Videos/temp:/app/output
+      - ~/Videos/temp:/app/output
     working_dir: /app
     command: python3 main.py mp4
     user: 1000:1000
