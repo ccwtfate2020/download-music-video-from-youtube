@@ -21,8 +21,7 @@ N/A
 | Version | Date | Description
 | --- | --- | ---
 | v1.0.0 | 11 May 2023 | Initial version
-| v1.0.1 | 27 May 2023 | 1. Change the output path in docker-compose.yaml and main.py
-|        |             | 2. Update the download music and download video function in main.py
+| v1.0.1 | 27 May 2023 | 1. Change the output path in docker-compose.yaml and main.py<br>2. Update the download music and download video function in main.py|
 
 ## Reference
 N/A
