@@ -4,13 +4,14 @@ N/A
 ## Getting Started
 
 1. Build a docker image<br>
-```docker build -t my-python3-container:1.0 .```
+```docker build -t download-yt-container .```
 
+   
 2. Download music<br>
-```docker compose run download-music```<br>
+```docker compose run download-yt mp3```<br>
    <br>OR<br><br>
    Download video<br>
-```docker compose run download-video```
+```docker compose run download-yt mp4```<br>
 
 
 ### Dependencies
@@ -22,6 +23,7 @@ N/A
 | --- | --- | ---
 | v1.0.0 | 11 May 2023 | Initial version
 | v1.0.1 | 27 May 2023 | 1. Change the output path in docker-compose.yaml and main.py<br>2. Update the download music and download video function in main.py|
+| v1.0.2 | 10 Jun 2023 | 1. Add ENTRYPOINT in Dockerfile<br>2. Update docker-compose.yaml|
 
 ## Reference
 N/A

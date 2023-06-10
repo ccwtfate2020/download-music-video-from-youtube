@@ -13,3 +13,4 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 #CMD ["python"]
 
+ENTRYPOINT [ "python3","main.py" ]

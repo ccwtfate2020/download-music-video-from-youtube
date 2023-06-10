@@ -3,28 +3,39 @@
 # docker run -v "$(pwd):/app" -v "/home/ccwtadmin/Music/temp:/app/output" -w /app -it my-python3-container python3 main.py mp3
 version: '3'
 services:
-  download-music:
-    image: my-python3-container
+  download-yt:
+    image: download-yt-container
     build:
       context: ./
       dockerfile: Dockerfile
     volumes:
       - .:/app
-      - ~/Music/temp:/app/output
+      - ~/Downloads:/app/output
     working_dir: /app
-    command: python3 main.py mp3
     user: 1000:1000
 
+  # download-music:
+  #   image: my-python3-container
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - .:/app
+  #     - ~/Music/temp:/app/output
+  #   working_dir: /app
+  #   command: python3 main.py mp3
+  #   user: 1000:1000
 
-  download-video:
-    image: my-python3-container
-    build:
-      context: ../
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app
-      - ~/Videos/temp:/app/output
-    working_dir: /app
-    command: python3 main.py mp4
-    user: 1000:1000
+
+  # download-video:
+  #   image: my-python3-container
+  #   build:
+  #     context: ../
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - .:/app
+  #     - ~/Videos/temp:/app/output
+  #   working_dir: /app
+  #   command: python3 main.py mp4
+  #   user: 1000:1000
     

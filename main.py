@@ -9,8 +9,8 @@ error="\033[31m"
 msg="\033[34m"
 default="\033[0m"
 
-music_dir = '~/Music/temp'
-video_dir = '~/Videos/temp'
+music_dir = '~/Downloads'
+video_dir = music_dir
 output_dir = '/app/output'
 youtube_link_filename="youtubeLink.txt"
 
@@ -47,11 +47,12 @@ def download_mp3(mp4_filename):
 
 
 def download_mp4(link,retry = 0):
-    # yt = YouTube(link, use_oauth=True, allow_oauth_cache=True)
-    yt = YouTube(link)
+    
     # filter mp4 streams from object
     while retry < 3:
         try:
+            # yt = YouTube(link, use_oauth=True, allow_oauth_cache=True)
+            yt = YouTube(link)
             video = yt.streams.get_by_resolution(resolution="720p")
             mp4_filename = video.default_filename
             print(f"{msg}Download \"{mp4_filename}\" ...{default}")
@@ -60,9 +61,9 @@ def download_mp4(link,retry = 0):
         except:
             retry += 1
             time.sleep(3)
-            print(f"{error}{retry} retry to download {mp4_filename}{default}")
+            print(f"{warning}{retry} retry to download mp4 from {link} {default}")
     else:
-        exit(f"{error}Failed to download {mp4_filename}{default}")
+        exit(f"{error}Failed to download mp4 from {link} {default}")
 
 #Using readlines()
 file = open(youtube_link_filename, 'r')
