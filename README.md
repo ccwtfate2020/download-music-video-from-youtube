@@ -13,6 +13,10 @@ N/A
    Download video<br>
 ```docker compose run download-yt mp4```<br>
 
+If you don't want to create a duplicated container, but download a new youtube video
+1. Add yt link into youtubeLink.txt
+2. ```docker run <container ID>``` (Please notice the container only run one command. Double check the command in your container)
+
 
 ### Dependencies
 N/A
